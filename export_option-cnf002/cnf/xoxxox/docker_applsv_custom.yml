@@ -1,0 +1,7 @@
+services:
+  volumes:
+    - ../../../export:/opt/common
+    - ../../../import/cnnmmd_xoxxox_tttlcp/applcp:/opt/applcp
+    - ../../../import/cnnmmd_xoxxox_ttsmio/appmio:/opt/appmio
+  xoxxox_applsv:
+    command: "/usr/local/bin/llama-server -m /opt/appmio/prm/MioTTS-0.4B-Q4_K_M.gguf -c 8192 --cont-batching --batch_size 8 --host 0.0.0.0 --port 80 --n-gpu-layers"
