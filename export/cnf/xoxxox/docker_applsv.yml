@@ -1,0 +1,16 @@
+networks:
+  default:
+    name: xoxxox_netmid
+    external: true
+services:
+  xoxxox_applsv:
+    image: xoxxox/envlsv:001
+    container_name: xoxxox_applsv
+    volumes:
+    - ../../../export:/opt/common
+    - ../../../import/cnnmmd_xoxxox_applsv/applsv:/opt/applsv
+    env_file:
+    - ./envdir.txt
+    ports:
+    - 17301:80
+    command: "/usr/local/bin/llama-server --version"

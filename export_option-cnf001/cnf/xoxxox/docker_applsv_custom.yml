@@ -1,0 +1,6 @@
+services:
+  volumes:
+    - ../../../export:/opt/common
+    - ../../../import/cnnmmd_xoxxox_tttlcp/applcp:/opt/applcp
+  xoxxox_applsv:
+    command: "/usr/local/bin/llama-server -m /opt/applcp/prm/gemma-4-E2B-it-Q8_0.gguf -ngl 999 -c 512 -n 128 -b 128 -ub 64 --parallel 1 --cache-ram 0 --reasoning off --host 0.0.0.0 --port 80"
