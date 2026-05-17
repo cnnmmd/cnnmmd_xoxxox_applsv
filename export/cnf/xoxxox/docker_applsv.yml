@@ -12,5 +12,5 @@ services:
     env_file:
     - ./envdir.txt
     ports:
-    - 17301:80
+    - 17001:80
     command: "/usr/local/bin/llama-server --version"
